@@ -9,9 +9,9 @@ import cloudinary.uploader
 #
 # ##cloudinary 雲端 設定--begin
 cloudinary.config(
-    cloud_name="dcu7s9x47",
-    api_key="221147588858318",
-    api_secret="dA7ky65yIIWVMMNNKOMNb4Exd40"
+    cloud_name=os.environ.get("CLOUDINARY_CLOUD_NAME"),
+    api_key=os.environ.get("CLOUDINARY_API_KEY"),
+    api_secret=os.environ.get("CLOUDINARY_API_SECRET")
 )
 # ##cloudinary 雲端 設定--end
 #
@@ -127,7 +127,7 @@ print("網址為:",cloud_url)
 
 ## line 發送訊息設定--begin
 
-CHANNEL_ACCESS_TOKEN = "kJAd48tOB/1nlkK4xV4lAmwhkQwPyBTJ7V16WSxQEFHZSYbfHLr0tYChTUNqhP8rUR0bzrTl2n+V6pa7uFcxY3rxmxAVRcNxJ1k7mj5Oh7g1BZkgeQese1mjwtIaiLDCwjPL02VpuZeocsgEqnb2MwdB04t89/1O/w1cDnyilFU="
+CHANNEL_ACCESS_TOKEN = os.environ.get("LINE_CHANNEL_ACCESS_TOKEN")
 # USER_ID = "Uf51ffd305ce026921198cca620f8b554"
 headers = {
     "Content-Type": "application/json",
